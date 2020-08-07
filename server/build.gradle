@@ -131,7 +131,9 @@ task migrationJarForManifest(type: Jar) {
 }
 
 shadowJar {
-    baseName("UAA-FlywayMigrationRunner")
+    archiveBaseName.set('uaa-migration')
+    archiveClassifier.set('')
+    archiveVersion.set('')
     manifest {
         inheritFrom(project.tasks.migrationJarForManifest.manifest)
     }
